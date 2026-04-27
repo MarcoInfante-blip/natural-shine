@@ -1,0 +1,33 @@
+<section id="portfolio" class="portfolio">
+    <div class="container-wide">
+        <div class="portfolio-header">
+            <h2 class="section-title">Inspírate con algunos de nuestros trabajos</h2>
+            <div class="portfolio-nav">
+                <a href="#" class="view-all">VER TODOS</a>
+                <div class="nav-arrows">
+                    <button class="nav-arrow prev" (click)="prev()" aria-label="Previous">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button class="nav-arrow next" (click)="next()" aria-label="Next">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-container" (mouseenter)="stopAutoPlay()" (mouseleave)="startAutoPlay()">
+            <div class="carousel-track-wrapper">
+                <div class="carousel-track" [style.transform]="getTransform()"
+                    [style.transition]="isTransitioning ? 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)' : 'none'">
+                    @for (image of displayImages; track $index) {
+                    <div class="carousel-item" [style.flex]="'0 0 ' + (100 / visibleItems) + '%'">
+                        <div class="image-wrapper">
+                            <img [src]="image.url" [alt]="image.title">
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

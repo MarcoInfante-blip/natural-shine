@@ -1,0 +1,68 @@
+<section id="about" class="about-ultra">
+    <!-- Intro: Reordered and moved "up" (Screenshot 1 & User Request) -->
+    <div class="vw-section vw-white intro-top">
+        <div class="container-narrow">
+            <div class="minimal-intro">
+                <h1 class="minimal-title" [innerHTML]="sections.intro.title"></h1>
+                <p class="minimal-description">{{ sections.intro.description }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Discovery Section (Restored as requested) -->
+    <div class="vw-section vw-gray section-narrow-padding">
+        <div class="container-narrow">
+            <div class="discover-minimal">
+                <h2 class="minimal-heading-large">{{ sections.discover.title }}</h2>
+                <div class="discover-grid-simple">
+                    <p>{{ sections.discover.col1 }}</p>
+                    <p>{{ sections.discover.col2 }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statement 1: Below Discover (User Request) -->
+    <div class="visual-statement">
+        <div class="statement-bg" [style.backgroundImage]="'url(' + sections.statement1.image + ')'"></div>
+        <div class="statement-overlay">
+            <h2 class="statement-text">{{ sections.statement1.text }}</h2>
+        </div>
+    </div>
+
+    <!-- Content: Coloration -->
+    <div class="vw-section vw-white">
+        <div class="container-narrow">
+            <div class="minimal-content-block">
+                <h2 class="minimal-heading-large">{{ sections.coloration.title }}</h2>
+                <p class="minimal-body-text">{{ sections.coloration.description }}</p>
+                <div class="minimal-action">
+                    <button class="btn btn-outline-black" (click)="scrollToSection('contact')">RESERVAR CITA</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pillars Section (The 4 Pillars requested) -->
+    <div class="vw-section vw-gray section-pillars">
+        <div class="container">
+            <div class="minimal-pillars-grid">
+                @for (item of sections.pillars.items; track item.title) {
+                <div class="minimal-pillar-card">
+                    <div class="pillar-icon-wrap">
+                        <i class="fa-solid" [ngClass]="item.icon"></i>
+                    </div>
+                    <span class="pillar-label">{{ item.title }}</span>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="vw-section vw-white">
+        <div class="container">
+            <app-testimonials></app-testimonials>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,80 @@
+<section id="booking" class="booking">
+    <div class="container">
+        <div class="booking-wrapper">
+            <div class="booking-info fade-in-up">
+                <div class="section-title text-left">
+                    <span class="section-subtitle">RESERVAS</span>
+                    <h2>Reserva tu <span class="text-italic">Cita</span></h2>
+                </div>
+                <p>
+                    Vive la experiencia Salvia en Pozuelo o Las Rozas.
+                    Selecciona tu tratamiento preferido y nuestro equipo se pondrá en contacto contigo
+                    para confirmar la disponibilidad.
+                </p>
+                <div class="whatsapp-box">
+                    <p>Si lo prefieres, puedes reservar por WhatsApp:</p>
+                    <a href="https://wa.me/34600000000" target="_blank" class="btn btn-outline">
+                        <i class="fa-brands fa-whatsapp"></i> WHATSAPP
+                    </a>
+                </div>
+            </div>
+
+            <div class="booking-form-box fade-in">
+                <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="modern-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre Completo</label>
+                            <input type="text" formControlName="name" placeholder="Tu nombre">
+                        </div>
+                    </div>
+                    <div class="form-row split">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" formControlName="email" placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" formControlName="phone" placeholder="600 000 000">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Tratamiento</label>
+                            <select formControlName="service">
+                                <option value="" disabled selected>Selecciona un servicio</option>
+                                @for (service of services; track service.value) {
+                                <option [value]="service.value">{{ service.label }}</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row split">
+                        <div class="form-group">
+                            <label>Fecha</label>
+                            <input type="date" formControlName="date">
+                        </div>
+                        <div class="form-group">
+                            <label>Hora</label>
+                            <input type="time" formControlName="time">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit" class="btn btn-primary btn-full">SOLICITAR CITA</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    @if (showSuccess) {
+    <div class="success-overlay" [class.active]="showSuccess">
+        <div class="success-card">
+            <div class="success-check"><i class="fa-solid fa-check"></i></div>
+            <h3>¡Gracias!</h3>
+            <p>Hemos recibido tu solicitud. Nos pondremos en contacto contigo pronto.</p>
+            <button class="btn btn-primary" (click)='closeSuccessModal()'>CERRAR</button>
+        </div>
+    </div>
+    }
+</section>

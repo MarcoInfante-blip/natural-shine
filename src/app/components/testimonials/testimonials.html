@@ -1,0 +1,23 @@
+<section id="testimonials" class="testimonials">
+    <div class="container-wide">
+        <div class="testimonials-header">
+            <h2 class="section-title">Testimonios de Nuestros Clientes Satisfechos</h2>
+        </div>
+
+        <div class="testimonials-grid">
+            @for (testimonial of testimonials; track $index) {
+            <div class="testimonial-card scroll-reveal" appScrollReveal [delay]="$index * 150">
+                <div class="card-content">
+                    <p class="testimonial-text">"{{ testimonial.text }}"</p>
+                </div>
+                <div class="card-footer">
+                    <div class="author-info">
+                        <span class="author-name">{{ testimonial.author }}</span>
+                        <span class="author-username">{{ testimonial.username }}</span>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

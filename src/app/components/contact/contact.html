@@ -1,0 +1,50 @@
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="contact-header scroll-reveal" appScrollReveal>
+            <span class="contact-tag">Ubicación</span>
+            <h2 class="contact-title">Visítanos en Logroño</h2>
+            <p class="contact-intro">
+                En el corazón de la Rioja, un espacio de calma
+                dedicado a la belleza orgánica y el bienestar.
+            </p>
+        </div>
+
+        <div class="contact-content">
+            <!-- Left Column: Info list -->
+            <div class="contact-info-list scroll-reveal" appScrollReveal [delay]="200">
+                <div class="info-item">
+                    <label>Dirección</label>
+                    <p>Calle Gran Vía Juan Carlos I, 42 <br> 26002 Logroño, La Rioja</p>
+                </div>
+
+                <div class="info-item">
+                    <label>Contacto</label>
+                    <p>Tel: +34 941 234 567</p>
+                    <p>WhatsApp: +34 698 765 432</p>
+                </div>
+
+                <div class="info-item">
+                    <label>Horario</label>
+                    <p>Lun - Vie: 9:00 - 20:00</p>
+                    <p>Sáb: 10:00 - 18:00</p>
+                </div>
+
+                <div class="contact-actions">
+                    <a href="https://www.google.com/maps?q=Calle%20Gran%20V%C3%ADa%20Juan%20Carlos%20I%2C%2042%2C%2026002%20Logro%C3%B1o%2C%20La%20Rioja%2C%20Spain"
+                        target="_blank" class="btn-location">
+                        CÓMO LLEGAR <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Map -->
+            <div class="contact-map-wrapper scroll-reveal" appScrollReveal [delay]="400">
+                <iframe
+                    src="https://www.google.com/maps?q=Calle%20Gran%20V%C3%ADa%20Juan%20Carlos%20I%2C%2042%2C%2026002%20Logro%C3%B1o%2C%20La%20Rioja%2C%20Spain&output=embed"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+<section id="hero" #heroContainer class="hero-carousel" role="region" aria-label="Carrusel de bienvenida">
+    <div class="slides-container" [style.transform]="getTransform()" [class.no-transition]="isTransitionDisabled">
+        @for (slide of slides; track $index) {
+        <div class="slide" [class.active]="currentSlide === $index || (currentSlide === slides.length && $index === 0)">
+            <div class="slide-bg" [style.backgroundImage]="'url(' + slide.image + ')'"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-label">{{ slide.tag }}</span>
+                    <h1 class="hero-title" [innerHTML]="slide.title"></h1>
+                    <div class="hero-actions">
+                        <button class="btn btn-hero-dark" (click)="scrollToSection('contact')">
+                            RESERVA TU CITA
+                        </button>
+                        <button class="btn btn-hero-outline" (click)="scrollToSection('services')">
+                            VER MÁS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control prev" (click)="prevSlide()">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="carousel-control next" (click)="nextSlide()">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Carousel Dots -->
+    <div class="carousel-dots">
+        @for (slide of slides.slice(0, -1); track $index) {
+        <span class="dot" [class.active]="currentSlide % (slides.length - 1) === $index"
+            (click)="goToSlide($index)"></span>
+        }
+    </div>
+</section>

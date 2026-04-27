@@ -1,0 +1,62 @@
+<footer class="footer">
+    <div class="container-wide">
+        <!-- Footer Top: Newsletter and Links -->
+        <div class="footer-top">
+            <div class="footer-newsletter">
+                <h3>Suscríbete a nuestra newsletter</h3>
+                <p>Regístrate con tu dirección de correo electrónico para recibir noticias y actualizaciones.</p>
+                <form class="newsletter-form" (submit)="$event.preventDefault()">
+                    <input type="email" placeholder="Correo electrónico" aria-label="Correo electrónico">
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+
+            <div class="footer-nav-columns">
+                <div class="nav-column">
+                    <h4>ACERCA DE NOSOTRAS</h4>
+                    <ul>
+                        <li><a href="#" (click)="scrollToSection('about')">Nuestra historia</a></li>
+                        <li><a href="#" (click)="scrollToSection('services')">Servicios</a></li>
+                        <li><a href="#" (click)="scrollToSection('contact')">Contáctanos</a></li>
+                    </ul>
+                </div>
+                <div class="nav-column">
+                    <h4>SÍGUENOS</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">TikTok</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Large Branding Section -->
+        <div class="footer-brand-large">
+            <h2 class="brand-big">Natural Shine</h2>
+        </div>
+
+        <hr class="footer-divider">
+
+        <!-- Footer Info Block -->
+        <div class="footer-info">
+            <div class="info-item">
+                <span class="info-label">CONTACTO</span>
+                <span class="info-value">info@naturalshine.es</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">HORARIO</span>
+                <span class="info-value">Lun - Sáb: 10:00 - 20:00</span>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© {{ currentYear }} Natural Shine Peluquería Orgánica.</p>
+            <div class="footer-legal">
+                <a href="#">Privacidad</a>
+                <a href="#">Aviso Legal</a>
+            </div>
+        </div>
+    </div>
+</footer>

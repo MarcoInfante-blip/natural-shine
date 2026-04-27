@@ -1,0 +1,256 @@
+@use '../../../styles' as *;
+
+.about-ultra {
+    background-color: #FFFFFF;
+
+    .vw-section {
+        padding: 2.5rem 0 0rem;
+        /* Pulling up the map from underneath */
+
+        &.vw-white {
+            background-color: #FFFFFF;
+        }
+
+        &.vw-gray {
+            background-color: #FAFAFA;
+        }
+
+        &.intro-top {
+            padding-top: 1.5rem;
+            padding-bottom: 4rem;
+            /* Extra space below intro section */
+        }
+
+        &.section-narrow-padding {
+            padding: 2.5rem 0;
+        }
+
+        &.section-pillars {
+            padding: 6rem 0;
+            /* Generous spacing above and below pillars */
+        }
+    }
+
+    .container-narrow {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    /* Minimal Intro */
+    .minimal-intro {
+        text-align: left;
+        /* Aligned left like screenshot */
+
+        .minimal-title {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-family: var(--font-heading);
+            font-weight: 200;
+            margin-bottom: 2.5rem;
+            color: #080808;
+            line-height: 1.2;
+            letter-spacing: 0.15em;
+        }
+
+        .minimal-description {
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #555;
+            max-width: 650px;
+            margin: 0;
+            font-weight: 300;
+        }
+    }
+
+    /* Discover Minimal */
+    .discover-minimal {
+        text-align: center;
+
+        .minimal-heading-large {
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            color: #000;
+        }
+
+        .discover-grid-simple {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            text-align: left;
+
+            p {
+                font-size: 1rem;
+                line-height: 1.8;
+                color: #555;
+            }
+        }
+    }
+
+    /* Visual Statement */
+    .visual-statement {
+        position: relative;
+        height: 60vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .statement-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: grayscale(0.1);
+        }
+
+        .statement-overlay {
+            position: relative;
+            z-index: 1;
+
+            .statement-text {
+                font-family: var(--font-heading);
+                font-size: 3.5rem;
+                color: #FFF;
+                font-weight: 200;
+                letter-spacing: 0.05em;
+                text-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+    /* Minimal Content Block */
+    .minimal-content-block {
+        text-align: center;
+
+        .minimal-heading-large {
+            font-size: 3rem;
+            font-family: var(--font-heading);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            color: #000;
+        }
+
+        .minimal-body-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .minimal-action .btn-outline-black {
+            padding: 0.8rem 2.5rem;
+            letter-spacing: 0.15em;
+            font-size: 0.75rem;
+            border: 1px solid #000;
+            color: #000;
+            background: transparent;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+
+            &:hover {
+                background: #000;
+                color: #FFF;
+            }
+        }
+
+        .minimal-action {
+            margin-bottom: 3rem;
+            /* White space below button */
+        }
+    }
+
+    /* Pillars Grid */
+    .minimal-pillars-grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 4rem;
+        /* Increased from 2rem for better separation */
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .minimal-pillar-card {
+            text-align: center;
+            flex: 1;
+            padding: 2rem 1.5rem;
+            background: #FAFAFA;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            .pillar-icon-wrap {
+                font-size: 2.5rem;
+                color: #333;
+                margin-bottom: 1.5rem;
+            }
+
+            .pillar-label {
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.12em;
+                color: #333;
+                font-weight: 600;
+                display: block;
+                line-height: 1.4;
+            }
+        }
+    }
+
+    /* Testimonials Helper */
+    .minimal-testimonials-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+
+        .minimal-title-small {
+            font-size: 1.8rem;
+            font-family: var(--font-heading);
+            letter-spacing: 0.1em;
+            color: #000;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .discover-grid-simple {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .vw-section {
+        padding: 5rem 0;
+    }
+
+    .minimal-intro .minimal-title {
+        font-size: 2.5rem;
+    }
+
+    .visual-statement {
+        height: 40vh;
+
+        .statement-text {
+            font-size: 2rem;
+        }
+    }
+
+    .minimal-pillars-grid {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}

@@ -1,0 +1,68 @@
+<div class="top-bar" [class.hidden]="isHidden" [class.scrolled]="isScrolled">
+    <div class="container-wide">
+        <div class="info-items">
+            <a href="mailto:info@naturalshine.es" class="info-item">
+                <i class="fa-regular fa-envelope"></i> info@naturalshine.es
+            </a>
+            <span class="info-item">
+                <i class="fa-solid fa-phone"></i> +34 676 44 55 66 (Las Rioja) | +34 600 94 88 66 (Logroño)
+            </span>
+        </div>
+        <div class="social-items">
+            <a href="#" class="social-circle"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-circle"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" class="social-circle"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+    </div>
+</div>
+
+<header class="header" [class.scrolled]="isScrolled" [class.hidden]="isHidden" [class.on-nosotros]="isNosotrosPage"
+    [class.on-servicios]="isServiciosPage" [class.menu-active]="isMenuOpen">
+    <div class="container-wide">
+        <nav class="navbar">
+            <div class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="logo" [routerLink]="['/']" (click)="closeMenu()">
+                <div class="logo-main">Natural Shine <i class="fa-solid fa-leaf"></i></div>
+                <div class="logo-sub">PELUQUERÍA ORGÁNICA</div>
+            </div>
+
+            <ul class="nav-menu" [class.active]="isMenuOpen">
+                <div class="mobile-menu-header">
+                    <div class="close-menu" (click)="closeMenu()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+
+                <li><a [routerLink]="['/nosotros']" (click)="closeMenu()">Nosotros</a></li>
+                <li><a [routerLink]="['/servicios']" (click)="closeMenu()">Servicios</a></li>
+                <li><a [routerLink]="['/portfolio']" (click)="closeMenu()">Portfolios</a></li>
+                <li><a [routerLink]="['/contacto']" (click)="closeMenu()">Contacto</a></li>
+
+                <div class="mobile-contact-info">
+                    <a href="mailto:info@naturalshine.es" class="contact-item">
+                        <i class="fa-regular fa-envelope"></i> info@naturalshine.es
+                    </a>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i> +34 446 00 00 77 (La Rioja)
+                    </div>
+                    <div class="contact-item no-icon">
+                        +34 444 55 66 77 (Logroño)
+                    </div>
+                </div>
+
+                <div class="mobile-social-icons">
+                    <a href="#" class="social-circle-mobile"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-circle-mobile"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="social-circle-mobile"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="menu-overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>

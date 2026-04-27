@@ -1,0 +1,351 @@
+@use '../../../styles' as *;
+
+.services-page-scroll {
+    background-color: #fff;
+    min-height: 100vh;
+    padding-top: 0;
+}
+
+/* Hero Section - Dark Background */
+.services-hero-simple {
+    padding: 11rem 0 4rem;
+    background: #000;
+    text-align: left;
+
+    .container-narrow {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .hero-title-simple {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        font-weight: 200;
+        color: #fff;
+        margin-bottom: 2.5rem;
+        letter-spacing: 0.15em;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        font-family: var(--font-body);
+        font-size: 0.98rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 1.5rem;
+        font-weight: 300;
+        max-width: 650px;
+    }
+
+    .hero-highlight {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #FFFFFF;
+        margin: 3rem 0 2rem;
+        letter-spacing: 0.15em;
+    }
+}
+
+/* Alternating Service Sections - Salvia Style with Scroll Reveal */
+.service-section-alt {
+    padding: 2rem 0;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    /* Prevent horizontal scroll during animation */
+
+    /* Initial State: Columns will be animated */
+    .service-image-col,
+    .service-text-col {
+        opacity: 0;
+        transition: transform 1s ease-out, opacity 1s ease-out;
+    }
+
+    /* Standard Layout (Image Left, Text Right) */
+    .service-image-col {
+        transform: translateX(-100px);
+        /* Coming from Left */
+    }
+
+    .service-text-col {
+        transform: translateX(100px);
+        /* Coming from Right */
+    }
+
+    /* Reversed Layout (Text Left, Image Right) */
+    &.reverse {
+        .service-text-col {
+            transform: translateX(-100px);
+            /* Coming from Left */
+        }
+
+        .service-image-col {
+            transform: translateX(100px);
+            /* Coming from Right */
+        }
+    }
+
+    /* Triggered State */
+    &.revealed {
+
+        .service-image-col,
+        .service-text-col {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .container-fluid {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+    }
+
+    .service-row {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        min-height: auto;
+    }
+
+    @media (min-width: 993px) {
+        .service-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            min-height: 400px;
+            align-items: center;
+        }
+    }
+
+    .service-image-col {
+        position: relative;
+        height: 100%;
+        min-height: 400px;
+    }
+
+    .service-image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 2px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: grayscale(10%) brightness(1.05);
+        transition: transform 0.6s ease;
+    }
+
+    &:hover .service-img {
+        transform: scale(1.03);
+    }
+
+    .service-text-col {
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .service-text-content {
+        max-width: 480px;
+    }
+
+    .service-title-alt {
+        font-family: var(--font-heading);
+        font-size: 2.2rem;
+        font-weight: 200;
+        color: #1a1a1a;
+
+        margin-bottom: 2rem;
+        letter-spacing: 0.01em;
+        line-height: 1.25;
+    }
+
+    .service-description-alt {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 2;
+        color: #666;
+
+        font-weight: 300;
+        letter-spacing: 0.01em;
+    }
+
+    /* Reverse layout logic - Desktop only */
+    @media (min-width: 993px) {
+        &.reverse {
+            .service-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .service-image-col {
+                order: 2;
+            }
+
+            .service-text-col {
+                order: 1;
+            }
+        }
+    }
+}
+
+/* Portfolio Section */
+.portfolio-section-services {
+    padding: 5rem 0;
+    background-color: #FAFAFA;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+    &.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Testimonials Section */
+.testimonials-section-services {
+    padding: 5rem 0;
+    background-color: #FFFFFF;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+    &.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .testimonials-title-services {
+        font-family: var(--font-heading);
+        font-size: 2.5rem;
+        font-weight: 200;
+        color: #1a1a1a;
+        text-align: center;
+        margin-bottom: 4rem;
+        letter-spacing: 0.01em;
+    }
+}
+
+/* Container Utilities */
+.container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .service-section-alt {
+        padding: 2rem 0;
+
+        .container-fluid {
+            padding: 0 2rem;
+        }
+
+        .service-row {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            min-height: auto;
+        }
+
+        .service-image-col {
+            width: 100%;
+            min-height: 280px;
+            order: 1;
+        }
+
+        .service-text-col {
+            width: 100%;
+            padding: 0 1.5rem 3rem;
+            order: 2;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .service-text-content {
+            max-width: 100%;
+            /* Use full width for centering */
+        }
+
+        .service-title-alt {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-description-alt {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* HARD RESET: Force order for reversed sections on mobile */
+        &.reverse {
+            .service-image-col {
+                order: 1 !important;
+            }
+
+            .service-text-col {
+                order: 2 !important;
+            }
+        }
+    }
+
+    .services-hero-simple {
+        padding: 8rem 0 5rem;
+    }
+
+    .portfolio-section-services,
+    .testimonials-section-services {
+        padding: 4rem 0;
+
+        .testimonials-title-services {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .service-section-alt {
+        .service-image-col {
+            min-height: 250px;
+        }
+
+        .service-text-col {
+            padding: 2rem 1.5rem;
+        }
+
+        .service-title-alt {
+            font-size: 1.6rem;
+        }
+
+        .service-description-alt {
+            font-size: 1rem;
+        }
+    }
+
+    .services-hero-simple {
+        .hero-title-simple {
+            font-size: 1.8rem;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+        }
+    }
+}

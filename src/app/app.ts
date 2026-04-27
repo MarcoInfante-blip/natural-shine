@@ -1,11 +1,20 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { HeaderComponent } from './components/header/header';
+import { ContactComponent } from './components/contact/contact';
+import { FooterComponent } from './components/footer/footer';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [
+    HeaderComponent,
+    ContactComponent,
+    FooterComponent,
+    RouterOutlet
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
-export class App {
-  protected readonly title = signal('natural-shine-spa');
+export class AppComponent {
+  title = 'Natural Shine - Peluquería Sostenible';
 }

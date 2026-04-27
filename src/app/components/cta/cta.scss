@@ -1,0 +1,106 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.cta-ticker {
+    background-color: var(--color-primary);
+    padding: 0.8rem 0;
+    /* Sustancialmente más fino */
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+
+    /* CRITICAL: Force Full Width Breakout */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+    max-width: 100vw;
+    /* Prevent overflow */
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 30s linear infinite;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    padding-right: 4rem;
+    /* Gap between repetitions */
+}
+
+.ticker-brand {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    /* Achicado de 1.5rem */
+    font-weight: 800;
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+}
+
+.ticker-separator {
+    font-size: 1.2rem;
+    margin: 0 1.5rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ticker-text {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    /* Achicado de 1.5rem */
+    font-weight: 400;
+    color: white;
+}
+
+.ticker-action {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    /* Achicado de 2rem */
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-cream);
+    margin-left: 1.5rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-25%);
+        /* Moves by one item width since we have 4 identical items */
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-ticker {
+        padding: 1rem 0;
+    }
+
+    .ticker-brand,
+    .ticker-text,
+    .ticker-action {
+        font-size: 1.2rem;
+    }
+
+    .ticker-action {
+        font-size: 1.4rem;
+    }
+}

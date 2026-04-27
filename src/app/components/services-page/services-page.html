@@ -1,0 +1,54 @@
+<section class="services-page-scroll">
+    <!-- Hero/Intro Section -->
+    <div class="services-hero-simple">
+        <div class="container-narrow">
+            <h1 class="hero-title-simple">¿Qué servicios ofrecemos?</h1>
+            <p class="hero-description">
+                Ofrecemos un servicio completo de peluquería orgánica: cortes, peinados, recogidos... pero nuestro foco
+                principal está en la coloración saludable y los tratamientos naturales.
+            </p>
+            <p class="hero-highlight">¿CÓMO?</p>
+            <p class="hero-description">
+                La coloración con tintes naturales para el cabello es mucho más que una moda, es la manera más
+                respetuosa de cuidar tu pelo y el planeta. Confiamos en productos 100% orgánicos y respetuosos con el
+                medioambiente gracias a sus componentes biológicos.
+            </p>
+        </div>
+    </div>
+
+    <!-- Alternating Services Sections -->
+    @for (service of services; track service.title) {
+    <div class="service-section-alt" [class.reverse]="service.reverse">
+        <div class="container-fluid">
+            <div class="service-row">
+                <div class="service-image-col">
+                    <div class="service-image-wrapper">
+                        <img [src]="service.image" [alt]="service.title" class="service-img">
+                    </div>
+                </div>
+                <div class="service-text-col">
+                    <div class="service-text-content">
+                        <h2 class="service-title-alt">{{ service.title }}</h2>
+                        <p class="service-description-alt">{{ service.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+
+    <!-- Portfolio Section -->
+    <div class="portfolio-section-services">
+        <div class="container">
+            <app-portfolio></app-portfolio>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials-section-services">
+        <div class="container">
+            <h2 class="testimonials-title-services">Lo que opinan los clientes</h2>
+            <app-testimonials></app-testimonials>
+        </div>
+    </div>
+</section>
