@@ -19,16 +19,10 @@ export class ServicesPageComponent implements AfterViewInit {
       reverse: false
     },
     {
-      image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=800&q=80',
-      title: 'Coloración Natural con Barros 100% Vegetales',
-      description: 'Los barros se obtienen de plantas tintóreas trituradas, dependiendo de los tonos de esas plantas se obtienen las diferentes tonalidades que podemos aplicar a tu cabello. Son 100% orgánicos y no contienen amoniaco ni sustancias químicas.',
-      reverse: true
-    },
-    {
       image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80',
       title: 'Alisados Orgánicos',
       description: 'Tanto si quieres el cabello liso y controlado, como si tan solo quieres controlar el encrespamiento sin perder la forma de tu cabello, disponemos de soluciones personalizadas.',
-      reverse: false
+      reverse: true
     }
   ];
 
